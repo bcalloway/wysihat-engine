@@ -20,6 +20,25 @@ var WysihatHelper = {
   	});
   },
   
+  faceboxFilez: function()
+  {
+    facebox.loading();
+    new Effect.Appear($('facebox'), {duration: 0.3});
+
+    var fb  = facebox;
+    var url = '/wysihat_files/?type=file&editor=' + this.id;
+
+    new Ajax.Request(url, {
+  		method		: 'get',
+  		onFailure	: function(transport){
+  			fb.reveal(transport.responseText, null);
+  		},
+  		onSuccess	: function(transport){
+  			fb.reveal(transport.responseText, null);
+  		}
+  	});
+  },
+  
   faceboxLink: function()
   {
     if (this.linkSelected()) {
@@ -62,6 +81,9 @@ function wysiHatify(tag_id, buttons){
 		switch(button.toLowerCase()){
 			case 'image':
 				toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxFile(editor); }}); 
+			break;
+			case 'file':
+				toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxFilez(editor); }}); 
 			break;
 			case 'link':
 				toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxLink(editor); }}); 

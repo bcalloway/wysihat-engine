@@ -1,0 +1,22 @@
+<div id="clipboard">
+  <div id="clipboard-holder-<%= file %>">
+     
+  </div>
+  
+  <span>copy</span>
+</div>
+
+<script type="text/javascript">
+
+  var flashvars = {
+    url: "<%= url %>"
+  };
+  var params = {
+      menu: "false",
+      wmode: "windowless",
+      allowscriptaccess: "always"
+  };
+  var attributes = {allowfullscreen: "false"};
+
+  swfobject.embedSWF("/swf/clipboardcopy.swf", "clipboard-holder-<%= file %>", "32", "32","10.0.0", "clipboard-holder", flashvars, params, attributes);
+</script>

@@ -1,3 +1,7 @@
+0.1.8 (November 30, 2009) - Brandon Calloway
+* Added thumbnail creation for uploaded images
+* Added file upload with "copy-url-to-clipboard" functionality
+
 0.1.7 (November 6th, 2009) - Jeff Kreeftmeijer
 * Toolbar didn't show up in IE. Fixed :)
 

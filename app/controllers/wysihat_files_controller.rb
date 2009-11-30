@@ -1,6 +1,11 @@
 class WysihatFilesController < ApplicationController
   def index
-    @wysihat_file, @wysihat_files = WysihatFile.new, WysihatFile.all
+    @wysihat_file = WysihatFile.new
+    if params[:type] && params[:type] == "file"
+      @wysihat_files = WysihatFile.file_content_type_not_like("image").all
+    else
+      @wysihat_files = WysihatFile.file_content_type_like("image").all
+    end
     render :layout => false
   end
   

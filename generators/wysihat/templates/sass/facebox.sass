@@ -29,6 +29,7 @@
   td
     border-bottom: 0
     padding: 0
+    vertical-align: bottom
 
   .body
     padding: 10px
@@ -75,3 +76,33 @@
 * html #facebox_overlay
   position: absolute
   height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px')
+  
+#wysihat_files
+  margin-bottom: 10px
+  
+  li
+    margin-bottom: 10px
+    display: block
+    vertical-align: middle
+    height: 100px
+  
+  li.file
+    height: 25px
+    
+#asset, #clipboard, #delete
+  float: left
+  margin-left: 5px
+  
+#clipboard
+  width: 32px
+  span
+    margin-left: -999em !important
+
+#delete
+  width: 32px
+  a
+    width: 32px
+    height: 32px
+    display: block
+    background: url('../images/icons/delete.png') no-repeat
+    text-indent: -999em
