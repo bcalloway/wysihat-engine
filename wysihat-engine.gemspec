@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{wysihat-engine}
-  s.version = "0.1.7"
+  s.name = %q{bcalloway-wysihat-engine}
+  s.version = "0.1.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Jeff Kreeftmeijer"]
+  s.authors = ["Jeff Kreeftmeijer", "Brandon Calloway"]
   s.date = %q{2009-11-12}
-  s.description = %q{A Rails engine to help integrate the 37signals WysiHat rich text editor to your application.}
-  s.email = %q{jeff@80beans.com}
+  s.description = %q{Fork of the original wysihat-engine, by Jeff Kreeftmeijer. A Rails engine to help integrate the 37signals WysiHat rich text editor to your application.}
+  s.email = %q{brandon@brandoncalloway.com}
   s.extra_rdoc_files = [
     "README.textile"
   ]
@@ -66,7 +66,7 @@ Gem::Specification.new do |s|
      "lib/wysihat-engine.rb",
      "wysihat-engine.gemspec"
   ]
-  s.homepage = %q{http://www.80beans.com/2009/10/01/wysihat-engine/}
+  s.homepage = %q{http://github.com/bcalloway/wysihat-engine}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
