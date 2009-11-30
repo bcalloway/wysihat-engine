@@ -30,6 +30,10 @@ class WysihatGenerator < Rails::Generator::Base
       m.file 'images/facebox/tr.png',                 'public/images/facebox/tr.png'
       m.file 'images/facebox/loading.gif',            'public/images/facebox/loading.gif'
       
+      # swf
+      m.directory 'public/swf'
+      m.file 'swf/clipboardcopy.swf',                  'public/swf/clipboardcopy.swf'
+      
       # stylesheet & icons
       
       if options[:stylesheet]
