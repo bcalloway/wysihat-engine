@@ -1,0 +1,5 @@
+pt-BR:
+  wysihat_files:
+    destroy:
+      name: deletar
+      sure: Você tem certeza que quer deletar este arquivo?
