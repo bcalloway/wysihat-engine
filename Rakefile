@@ -62,12 +62,12 @@ end
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "wysihat-engine"
+    gem.name = "bcalloway-wysihat-engine"
     gem.summary = "A Rails engine to help integrate the 37signals WysiHat rich text editor to your application."
-    gem.description = "A Rails engine to help integrate the 37signals WysiHat rich text editor to your application."
-    gem.email = "jeff@80beans.com"
+    gem.description = "Fork of the original wysihat-engine, by Jeff Kreeftmeijer. A Rails engine to help integrate the 37signals WysiHat rich text editor to your application."
+    gem.email = "brandon@brandoncalloway.com"
     gem.homepage = "http://www.80beans.com/2009/10/01/wysihat-engine/"
-    gem.authors = ["Jeff Kreeftmeijer"]
+    gem.authors = ["Jeff Kreeftmeijer", "Brandon Calloway"]
     gem.add_development_dependency "yui-compressor", ">= 0.9.1"
     gem.add_dependency 'paperclip', ">= 2.3.1"
   end
