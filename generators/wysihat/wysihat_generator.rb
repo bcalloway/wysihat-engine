@@ -8,6 +8,7 @@ class WysihatGenerator < Rails::Generator::Base
       
       if options[:js_src]
         m.file 'javascripts/facebox.js',        'public/javascripts/facebox.js'
+        m.file 'javascripts/swfobject.js',        'public/javascripts/swfobject.js'
         m.file 'javascripts/wysihat.js',        'public/javascripts/wysihat.js'
         m.file 'javascripts/wysihat_engine.js', 'public/javascripts/wysihat_engine.js'
       end
@@ -54,7 +55,10 @@ class WysihatGenerator < Rails::Generator::Base
         m.file 'images/icons/text_align_center.png',  'public/images/icons/text_align_center.png'      
         m.file 'images/icons/text_align_left.png',    'public/images/icons/text_align_left.png'      
         m.file 'images/icons/text_align_right.png',   'public/images/icons/text_align_right.png'      
-        m.file 'images/icons/text_bold.png',          'public/images/icons/text_bold.png'           
+        m.file 'images/icons/text_bold.png',          'public/images/icons/text_bold.png' 
+        m.file 'images/icons/text_heading_1.png',     'public/images/icons/text_heading_1.png'
+        m.file 'images/icons/text_heading_2.png',     'public/images/icons/text_heading_2.png'
+        m.file 'images/icons/text_heading_3.png',     'public/images/icons/text_heading_3.png'          
         m.file 'images/icons/text_italic.png',        'public/images/icons/text_italic.png'      
         m.file 'images/icons/text_list_bullets.png',  'public/images/icons/text_list_bullets.png'      
         m.file 'images/icons/text_list_numbers.png',  'public/images/icons/text_list_numbers.png'      

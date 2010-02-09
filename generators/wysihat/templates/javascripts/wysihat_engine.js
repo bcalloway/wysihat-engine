@@ -1,4 +1,4 @@
-var toolbars = [];
+var editors = [];
 
 var WysihatHelper = {
   faceboxFile: function()
@@ -19,7 +19,7 @@ var WysihatHelper = {
   		}
   	});
   },
-  
+
   faceboxFilez: function()
   {
     facebox.loading();
@@ -47,21 +47,32 @@ var WysihatHelper = {
       facebox.loading();
       new Effect.Appear($('facebox'), {duration: 0.3});
       iframe = this;
-      facebox.reveal('<input type=\"text\" id=\"link_field\" style=\"width:100%;\"/>', null);         
+      facebox.reveal('<input type=\"text\" id=\"link_field\" style=\"width:100%;\"/>', null);
       Event.observe('link_field', 'change', function(event) {
         iframe.linkSelection($('link_field').value);
       });
     }
   },
-  
+
   faceboxHTML: function()
   {
     facebox.loading();
     new Effect.Appear($('facebox'), {duration: 0.3});
     iframe = this;
-    facebox.reveal('<textarea id=\"html_editor\" style=\"width:100%; height:400px;\">' + iframe.contentWindow.document.body.innerHTML + '</textarea>', null);         
+    facebox.reveal('<textarea id=\"html_editor\" style=\"width:100%; height:400px;\">' + iframe.contentWindow.document.body.innerHTML + '</textarea>', null);
     Event.observe('html_editor', 'change', function(event) {
       iframe.contentWindow.document.body.innerHTML = $('html_editor').value;
+    });
+  },
+  
+  faceboxPaste: function()
+  {
+    facebox.loading();
+    new Effect.Appear($('facebox'), {duration: 0.3});
+    iframe = this
+    facebox.reveal('<textarea id=\"paste_editor\" style=\"width:100%; height:400px;\"></textarea>', null);         
+    Event.observe('paste_editor', 'change', function(event) {
+      iframe.contentWindow.document.body.innerHTML = iframe.contentWindow.document.body.innerHTML + $('paste_editor').value.escapeHTML();
     });
   }
 };
@@ -70,32 +81,39 @@ function wysiHatify(tag_id, buttons){
   WysiHat.Editor.include(WysihatHelper);
   var editor = WysiHat.Editor.attach(tag_id);
   var toolbar = new WysiHat.Toolbar(editor);
-	
-	$$('form').each(function(i){
-	  i.onsubmit = function(){
-		  editor.save();
+
+  editors.push(editor);
+
+	$$('form').each(function(f){
+	  f.onsubmit = function(){
+	    editors.each(function(e){
+	      e.save();
+	    });
 	  };
 	});
-			
-	buttons.each(function(button){	
+
+	buttons.each(function(button){
 		switch(button.toLowerCase()){
 			case 'image':
-				toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxFile(editor); }}); 
+				toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxFile(editor); }});
 			break;
 			case 'file':
-				toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxFilez(editor); }}); 
+				toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxFilez(editor); }});
 			break;
 			case 'link':
-				toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxLink(editor); }}); 
+				toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxLink(editor); }});
 			break;
 			case 'html':
-				toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxHTML(editor); }}); 
+				toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxHTML(editor); }});
 			break;
 			case 'paste':
-				toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxPaste(editor); }}); 
+				toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxPaste(editor); }});
+			break;
+		  case 'h1': case 'h2': case 'h3': case 'h4': case 'h5': case 'h6': case 'p':
+			  toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.formatblockSelection(button.toLowerCase()); }});	
 			break;
 			default:
 		    toolbar.addButton({label : button.gsub('_','-').camelize().capitalize()});
 	  }
-	});                                        
+	});
 }
