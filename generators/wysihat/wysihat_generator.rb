@@ -48,6 +48,7 @@ class WysihatGenerator < Rails::Generator::Base
         m.file 'images/icons/arrow_undo.png',         'public/images/icons/arrow_undo.png'
         m.file 'images/icons/exclamation.png',        'public/images/icons/exclamation.png'      
         m.file 'images/icons/image.png',              'public/images/icons/image.png'      
+        m.file 'images/icons/file.png',              'public/images/icons/file.png'
         m.file 'images/icons/link.png',               'public/images/icons/link.png'      
         m.file 'images/icons/page_code.png',          'public/images/icons/page_code.png'      
         m.file 'images/icons/text_align_center.png',  'public/images/icons/text_align_center.png'      
