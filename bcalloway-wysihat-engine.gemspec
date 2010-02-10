@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{bcalloway-wysihat-engine}
-  s.version = "0.1.9"
+  s.version = "0.1.10"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jeff Kreeftmeijer", "Brandon Calloway"]
-  s.date = %q{2010-02-08}
+  s.date = %q{2010-02-09}
   s.description = %q{Fork of the original wysihat-engine, by Jeff Kreeftmeijer. A Rails engine to help integrate the 37signals WysiHat rich text editor to your application.}
   s.email = %q{brandon@brandoncalloway.com}
   s.extra_rdoc_files = [
@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
      "app/views/wysihat_files/index.html.erb",
      "app/views/wysihat_files/new.html.erb",
      "bcalloway-wysihat-engine-0.1.8.gem",
+     "bcalloway-wysihat-engine.gemspec",
      "config/locales/en.yml",
      "config/locales/pt-BR.yml",
      "generators/wysihat/templates/css/facebox.css",
@@ -46,6 +47,7 @@ Gem::Specification.new do |s|
      "generators/wysihat/templates/images/icons/arrow_redo.png",
      "generators/wysihat/templates/images/icons/arrow_undo.png",
      "generators/wysihat/templates/images/icons/exclamation.png",
+     "generators/wysihat/templates/images/icons/file.png",
      "generators/wysihat/templates/images/icons/image.png",
      "generators/wysihat/templates/images/icons/link.png",
      "generators/wysihat/templates/images/icons/page_code.png",
@@ -53,12 +55,16 @@ Gem::Specification.new do |s|
      "generators/wysihat/templates/images/icons/text_align_left.png",
      "generators/wysihat/templates/images/icons/text_align_right.png",
      "generators/wysihat/templates/images/icons/text_bold.png",
+     "generators/wysihat/templates/images/icons/text_heading_1.png",
+     "generators/wysihat/templates/images/icons/text_heading_2.png",
+     "generators/wysihat/templates/images/icons/text_heading_3.png",
      "generators/wysihat/templates/images/icons/text_italic.png",
      "generators/wysihat/templates/images/icons/text_list_bullets.png",
      "generators/wysihat/templates/images/icons/text_list_numbers.png",
      "generators/wysihat/templates/images/icons/text_strikethrough.png",
      "generators/wysihat/templates/images/icons/text_underline.png",
      "generators/wysihat/templates/javascripts/facebox.js",
+     "generators/wysihat/templates/javascripts/swfobject.js",
      "generators/wysihat/templates/javascripts/wysihat.js",
      "generators/wysihat/templates/javascripts/wysihat_engine.js",
      "generators/wysihat/templates/javascripts/wysihat_engine_pack.js",

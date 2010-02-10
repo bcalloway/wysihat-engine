@@ -7,7 +7,7 @@ var WysihatHelper = {
     new Effect.Appear($('facebox'), {duration: 0.3});
 
     var fb  = facebox;
-    var url = '/wysihat_files/?editor=' + this.id;
+    var url = '/wysihat_files/?type=image&editor=' + this.id;
 
     new Ajax.Request(url, {
   		method		: 'get',

@@ -2,7 +2,7 @@
   <div id="asset">
     <%= link_to_function((image_tag wysihat_file.file.url(:thumb)), "$$('iframe##{params[:editor]}')[0].insertImage(this.href); facebox.close();", :href => wysihat_file.file.url) %>
   </div>
-  <% if params[:type] && params[:type] == "file" %>
+  <% if params[:type] && params[:type] == "image" %>
     <%= render :partial => '/wysihat_files/clipboard', :locals => { :file => "#{wysihat_file.id}", :url => "http://#{SITE_URL}#{wysihat_file.file.url}" }  %>
   <% end %>
   <div id="delete">
